@@ -27,5 +27,5 @@ def home(request):
     return render(request, 'gram/home.html', context)
 
 def about(request):
-    return render(request, 'gram/about.html')
+    return render(request, 'gram/about.html', {'title':'About'})
     
