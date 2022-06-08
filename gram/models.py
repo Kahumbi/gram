@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -11,6 +12,8 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # image=models.ImageField(null=False, blank=False)
+    # image = models.ImageField(default='default.jpg',null=False, blank=False)
+    image = CloudinaryField('image')
 
 
     def __str__(self):
